@@ -1,6 +1,7 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // unquoted attributes should be ok in non-strict mode
 // https://github.com/isaacs/sax-js/issues/31
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<span class=test hello=world></span>',
   expect: [
     [
@@ -43,3 +44,5 @@ require(__dirname).test({
   strict: false,
   opt: {}
 })
+
+return module.exports;});

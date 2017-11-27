@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   xml: '<root>',
   expect: [
     [
@@ -24,3 +25,5 @@ require(__dirname).test({
   strict: true,
   opt: {}
 })
+
+return module.exports;});

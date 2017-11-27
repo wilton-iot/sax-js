@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   expect: [
     [ 'opentagstart', { name: 'ROOT', attributes: {}, ns: {} } ],
     [ 'attribute', {
@@ -34,3 +35,5 @@ require(__dirname).test({
     xmlns: true
   }
 }).write('<root length=12').write('345></root>').close()
+
+return module.exports;});

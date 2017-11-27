@@ -1,6 +1,7 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // stray ending tags should just be ignored in non-strict mode.
 // https://github.com/isaacs/sax-js/issues/32
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<a><b></c></b></a>',
   expect: [
     [
@@ -49,3 +50,5 @@ require(__dirname).test({
   strict: false,
   opt: {}
 })
+
+return module.exports;});

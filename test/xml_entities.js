@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   opt: { strictEntities: true },
   xml: '<r>&rfloor; ' +
     '&spades; &copy; &rarr; &amp; ' +
@@ -10,3 +11,5 @@ require(__dirname).test({
     ['closetag', 'R']
   ]
 })
+
+return module.exports;});

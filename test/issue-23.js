@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   xml: '<compileClassesResponse>' +
     '<result>' +
     '<bodyCrc>653724009</bodyCrc>' +
@@ -44,3 +45,5 @@ require(__dirname).test({
   strict: false,
   opt: {}
 })
+
+return module.exports;});

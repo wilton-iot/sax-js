@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // https://github.com/isaacs/sax-js/issues/33
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<xml>\n' +
     '<!-- \n' +
     '  comment with a single dash- in it\n' +
@@ -21,3 +22,5 @@ require(__dirname).test({
   strict: true,
   opt: {}
 })
+
+return module.exports;});

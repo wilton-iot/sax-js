@@ -21,5 +21,15 @@
   "devDependencies": {
     "standard": "^8.6.0",
     "tap": "^10.5.1"
+  },
+  "wilton": {
+    "excludes": [
+      "examples",
+      "test",
+      "AUTHORS",
+      "CONTRIBUTING.md",
+      "package-lock.json",
+      "runAllTests.js"
+    ]
   }
 }

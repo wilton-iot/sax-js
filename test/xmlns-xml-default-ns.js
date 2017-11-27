@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 var xmlnsAttr = {
   name: 'xmlns',
   value: 'http://foo',
@@ -14,7 +15,7 @@ var attrAttr = {
   uri: ''
 }
 
-require(__dirname).test({
+require("sax/test/index").test({
   xml: "<elm xmlns='http://foo' attr='bar'/>",
   expect: [
     [
@@ -69,3 +70,5 @@ require(__dirname).test({
     xmlns: true
   }
 })
+
+return module.exports;});

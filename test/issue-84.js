@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // https://github.com/isaacs/sax-js/issues/49
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<?has unbalanced "quotes?><xml>body</xml>',
   expect: [
     [ 'processinginstruction', { name: 'has', body: 'unbalanced "quotes' } ],
@@ -11,3 +12,5 @@ require(__dirname).test({
   strict: false,
   opt: { lowercasetags: true, noscript: true }
 })
+
+return module.exports;});

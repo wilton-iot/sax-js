@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // https://github.com/isaacs/sax-js/issues/49
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<xml><script>hello world</script></xml>',
   expect: [
     [ 'opentagstart', { name: 'xml', attributes: {} } ],
@@ -14,7 +15,7 @@ require(__dirname).test({
   opt: { lowercasetags: true, noscript: true }
 })
 
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<xml><script><![CDATA[hello world]]></script></xml>',
   expect: [
     [ 'opentagstart', { name: 'xml', attributes: {} } ],
@@ -30,3 +31,5 @@ require(__dirname).test({
   strict: false,
   opt: { lowercasetags: true, noscript: true }
 })
+
+return module.exports;});

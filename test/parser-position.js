@@ -1,5 +1,6 @@
-var sax = require('../lib/sax')
-var tap = require('tap')
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var sax = require('sax/lib/sax')
+var tap = require('assert')
 
 function testPosition (chunks, expectedEvents) {
   var parser = sax.parser()
@@ -28,3 +29,5 @@ testPosition(['<div>abcde', 'fgh</div>'], [
   ['text', { position: 19, startTagPosition: 14 }],
   ['closetag', { position: 19, startTagPosition: 14 }]
 ])
+
+return module.exports;});

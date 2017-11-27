@@ -1,6 +1,7 @@
-var sax = require('../lib/sax')
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var sax = require('sax')
 
-var t = require('tap')
+var t = require('assert')
 
 exports.sax = sax
 
@@ -8,6 +9,7 @@ exports.sax = sax
 // if the options contains an xml string, it'll be written and the parser closed.
 // otherwise, it's assumed that the test will write and close.
 exports.test = function test (options) {
+  print("test: " + options.xml);
   var xml = options.xml
   var parser = sax.parser(options.strict, options.opt)
   var expect = options.expect
@@ -55,3 +57,5 @@ exports.test = function test (options) {
 if (module === require.main) {
   t.pass('common test file')
 }
+
+return module.exports;});

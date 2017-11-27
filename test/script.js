@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   xml: "<html><head><script>if (1 < 0) { console.log('elo there'); }</script></head></html>",
   expect: [
     [
@@ -64,3 +65,5 @@ require(__dirname).test({
     ]
   ]
 })
+
+return module.exports;});

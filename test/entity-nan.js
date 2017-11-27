@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   xml: '<r>&#NaN;</r>',
   expect: [
     ['opentagstart', {'name': 'R', attributes: {}}],
@@ -7,3 +8,5 @@ require(__dirname).test({
     ['closetag', 'R']
   ]
 })
+
+return module.exports;});

@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // default to uppercase
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<span class="test" hello="world"></span>',
   expect: [
     [ 'opentagstart', {
@@ -20,7 +21,7 @@ require(__dirname).test({
 })
 
 // lowercase option : lowercase tag/attribute names
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<span class="test" hello="world"></span>',
   expect: [
     [ 'opentagstart', {
@@ -41,7 +42,7 @@ require(__dirname).test({
 })
 
 // backward compatibility with old lowercasetags opt
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<span class="test" hello="world"></span>',
   expect: [
     [ 'opentagstart', {
@@ -60,3 +61,5 @@ require(__dirname).test({
   strict: false,
   opt: {lowercasetags: true}
 })
+
+return module.exports;});

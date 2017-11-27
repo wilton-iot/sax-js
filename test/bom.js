@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // BOM at the very begining of the stream should be ignored
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '\uFEFF<P></P>',
   expect: [
     ['opentagstart', {'name': 'P', attributes: {}}],
@@ -9,7 +10,7 @@ require(__dirname).test({
 })
 
 // In all other places it should be consumed
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '\uFEFF<P BOM="\uFEFF">\uFEFFStarts and ends with BOM\uFEFF</P>',
   expect: [
     ['opentagstart', {'name': 'P', attributes: {}}],
@@ -21,7 +22,7 @@ require(__dirname).test({
 })
 
 // BOM after a whitespace is an error
-require(__dirname).test({
+require("sax/test/index").test({
   xml: ' \uFEFF<P></P>',
   expect: [
     ['error', 'Non-whitespace before first tag.\nLine: 0\nColumn: 2\nChar: \uFEFF'],
@@ -34,7 +35,7 @@ require(__dirname).test({
 })
 
 // There is only one BOM allowed at the start
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '\uFEFF\uFEFF<P></P>',
   expect: [
     ['error', 'Non-whitespace before first tag.\nLine: 0\nColumn: 2\nChar: \uFEFF'],
@@ -45,3 +46,5 @@ require(__dirname).test({
   ],
   strict: true
 })
+
+return module.exports;});

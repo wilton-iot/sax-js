@@ -1,4 +1,5 @@
-var sax = require('../')
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var sax = require('sax/')
 var xml = '<r>'
 var text = ''
 for (var i in sax.ENTITIES) {
@@ -6,7 +7,7 @@ for (var i in sax.ENTITIES) {
   text += sax.ENTITIES[i]
 }
 xml += '</r>'
-require(__dirname).test({
+require("sax/test/index").test({
   xml: xml,
   expect: [
     ['opentagstart', {'name': 'R', attributes: {}}],
@@ -15,3 +16,5 @@ require(__dirname).test({
     ['closetag', 'R']
   ]
 })
+
+return module.exports;});

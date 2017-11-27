@@ -1,4 +1,5 @@
-var t = require(__dirname)
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var t = require("sax/test/index")
 
 // should be the same both ways.
 var xmls = [
@@ -91,3 +92,5 @@ xmls.forEach(function (x, i) {
     }
   })
 })
+
+return module.exports;});

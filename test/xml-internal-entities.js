@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 var iExpect = []
 var myAttributes = {}
 var ENTITIES = {}
@@ -80,7 +81,7 @@ iExpect.push([
 ])
 iExpect.push([ 'closetag', 'a' ])
 
-var parser = require(__dirname).test({
+var parser = require("sax/test/index").test({
   strict: true,
   expect: iExpect
 })
@@ -90,3 +91,5 @@ for (entity in entitiesToTest) {
 }
 
 parser.write(xmlStart + xmlEnd).close()
+
+return module.exports;});

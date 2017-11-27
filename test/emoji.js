@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // split high-order numeric attributes into surrogate pairs
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<a>&#x1f525;</a>',
   expect: [
     [ 'opentagstart', { name: 'A', attributes: {} } ],
@@ -10,3 +11,5 @@ require(__dirname).test({
   strict: false,
   opt: {}
 })
+
+return module.exports;});

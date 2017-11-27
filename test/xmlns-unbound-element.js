@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   strict: true,
   opt: { xmlns: true },
   expect: [
@@ -33,7 +34,7 @@ require(__dirname).test({
   ]
 }).write('<unbound:root/>')
 
-require(__dirname).test({
+require("sax/test/index").test({
   strict: true,
   opt: {
     xmlns: true
@@ -99,3 +100,5 @@ require(__dirname).test({
     ]
   ]
 }).write('<unbound:root xmlns:unbound="someuri"/>')
+
+return module.exports;});

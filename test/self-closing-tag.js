@@ -1,4 +1,5 @@
-require(__dirname).test({
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+require("sax/test/index").test({
   xml: '<root>   ' +
     '<haha /> ' +
     '<haha/>  ' +
@@ -25,3 +26,5 @@ require(__dirname).test({
   ],
   opt: { trim: true }
 })
+
+return module.exports;});

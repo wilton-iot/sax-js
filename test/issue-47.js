@@ -1,5 +1,6 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 // https://github.com/isaacs/sax-js/issues/47
-require(__dirname).test({
+require("sax/test/index").test({
   xml: '<a href="query.svc?x=1&y=2&z=3"/>',
   expect: [
     [ 'opentagstart', { name: 'A', attributes: {} } ],
@@ -9,3 +10,5 @@ require(__dirname).test({
   ],
   opt: {}
 })
+
+return module.exports;});
