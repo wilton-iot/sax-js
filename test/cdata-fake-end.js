@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var p = require("sax/test/index").test({
   expect: [
     ['opentagstart', {'name': 'R', 'attributes': {}}],
@@ -28,4 +28,4 @@ var p2 = require("sax/test/index").test({
 x = '<r><![CDATA[[[[[[[[[]]]]]]]]]]></r>'
 p2.write(x).close()
 
-return module.exports;});
+require = requireOrig;});

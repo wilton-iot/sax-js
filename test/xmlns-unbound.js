@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 require("sax/test/index").test({
   strict: true,
   opt: { xmlns: true },
@@ -52,4 +52,4 @@ require("sax/test/index").test({
   ]
 }).write("<root unbound:attr='value'/>")
 
-return module.exports;});
+require = requireOrig;});

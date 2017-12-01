@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 require("sax/test/index").test({
   xml: '<span>Welcome,</span> to monkey land',
   expect: [
@@ -21,4 +21,4 @@ require("sax/test/index").test({
   opt: {}
 })
 
-return module.exports;});
+require = requireOrig;});

@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 require("sax/test/index").test({
   expect: [
     [ 'opentagstart', { name: 'ROOT', attributes: {}, ns: {} } ],
@@ -36,4 +36,4 @@ require("sax/test/index").test({
   }
 }).write('<root length=12').write('345></root>').close()
 
-return module.exports;});
+require = requireOrig;});

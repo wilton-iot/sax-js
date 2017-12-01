@@ -1,5 +1,5 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
-var sax = require('sax/')
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+var sax = require('sax')
 var xml = '<r>'
 var text = ''
 for (var i in sax.ENTITIES) {
@@ -17,4 +17,4 @@ require("sax/test/index").test({
   ]
 })
 
-return module.exports;});
+require = requireOrig;});

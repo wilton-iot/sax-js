@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var t = require("sax/test/index")
 
 // should be the same both ways.
@@ -93,4 +93,4 @@ xmls.forEach(function (x, i) {
   })
 })
 
-return module.exports;});
+require = requireOrig;});

@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // https://github.com/isaacs/sax-js/issues/49
 require("sax/test/index").test({
   xml: '<?has unbalanced "quotes?><xml>body</xml>',
@@ -13,4 +13,4 @@ require("sax/test/index").test({
   opt: { lowercasetags: true, noscript: true }
 })
 
-return module.exports;});
+require = requireOrig;});

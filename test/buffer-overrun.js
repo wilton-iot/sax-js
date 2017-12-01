@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // set this really low so that I don't have to put 64 MB of xml in here.
 var sax = require('sax/lib/sax')
 var bl = sax.MAX_BUFFER_LENGTH
@@ -30,4 +30,4 @@ require("sax/test/index").test({
   .close()
 sax.MAX_BUFFER_LENGTH = bl
 
-return module.exports;});
+require = requireOrig;});

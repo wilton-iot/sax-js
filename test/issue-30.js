@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // https://github.com/isaacs/sax-js/issues/33
 require("sax/test/index").test({
   xml: '<xml>\n' +
@@ -23,4 +23,4 @@ require("sax/test/index").test({
   opt: {}
 })
 
-return module.exports;});
+require = requireOrig;});

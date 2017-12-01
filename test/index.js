@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var sax = require('sax')
 
 var t = require('assert')
@@ -58,4 +58,4 @@ if (module === require.main) {
   t.pass('common test file')
 }
 
-return module.exports;});
+require = requireOrig;});

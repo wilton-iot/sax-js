@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // default to uppercase
 require("sax/test/index").test({
   xml: '<span class="test" hello="world"></span>',
@@ -62,4 +62,4 @@ require("sax/test/index").test({
   opt: {lowercasetags: true}
 })
 
-return module.exports;});
+require = requireOrig;});

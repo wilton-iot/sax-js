@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // split high-order numeric attributes into surrogate pairs
 require("sax/test/index").test({
   xml: '<a>&#x1f525;</a>',
@@ -12,4 +12,4 @@ require("sax/test/index").test({
   opt: {}
 })
 
-return module.exports;});
+require = requireOrig;});
